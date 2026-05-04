@@ -1,0 +1,88 @@
+
+SN - 10ZL 811422 Central Peel SS <811422@pdsb.net>
+Thu, Oct 16, 2025, 9:23 AM
+to Laila
+
+import java.util.Scanner;
+
+public class pokemon
+{
+public static void main (String args[])
+{
+new pokemon ();
+}
+public pokemon ()
+{
+Scanner input = new Scanner(System.in);
+char again = 'y';
+while (again=='y')
+{
+System.out.println ("A Pikachu and a Bulbasaur meet on a field!");
+
+int pikaHP = 40;
+int bulbaHP = 40;
+//the loop for one game
+while (pikaHP >= 0 && bulbaHP >= 0)
+{
+//the HP update
+if (pikaHP != 40 || bulbaHP != 40)
+System.out.println("***** The battle continues.... *****");
+System.out.println (" Pikachu's HP:\t\t" + pikaHP);
+System.out.println (" Bulbasaur's HP:\t" + bulbaHP);
+System.out.println ("");
+//let Bublasaur choose an attack
+System.out.println ("What attack did does the Bulbasaur choose?");
+System.out.println ("(1) seed bomb");
+System.out.println ("(2) sludge bomb");
+System.out.println ("(3) power whip");
+System.out.println ("Bublasaur's attack? ");
+int choice = input.nextInt();
+//pikachu responds
+int rand = (int) (Math.random () * 3) + 1;
+if (rand == 1)
+System.out.println ("Pikachu responds with a thunder shock!");
+else if (rand == 2)
+System.out.println ("Pikachu responds with a electro ball");
+else
+System.out.println ("Pikachu responds with a quick attack!");
+//calculate the winner
+System.out.println ("");
+int winner = (int) (Math.random () * 2) + 1;
+int pts = (int) (Math.random () * 15) + 5;
+if (winner == 1)
+{
+System.out.println ("Pikachu wins. ");
+
+bulbaHP = bulbaHP - pts;
+
+}
+else
+{
+System.out.println (" Bulbasaur wins. ");
+
+pikaHP = pikaHP - pts;
+
+}
+System.out.println ("");
+}
+//the battle is over, print the winner
+System.out.println ("");
+System.out.println("***** The battle is over!!! *****");
+System.out.println ("");
+if (pikaHP < 0)
+{
+System.out.println ("Pikachu has lost the battle!");
+System.out.println ("Bulbasaur wins the battle!");
+}
+else
+{
+System.out.println ("Bulbasaur has lost the battle!");
+System.out.println ("Pikachu wins the battle!");
+}
+System.out.println ("");
+//ask the user to play again
+System.out.println ("Play again? (y/n) ");
+again = input.next().charAt(0);
+}
+}
+}
